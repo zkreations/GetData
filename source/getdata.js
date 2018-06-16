@@ -26,12 +26,10 @@ function manageData(json) {
     json.items.forEach(function(element, index) {
 
         // Codigo de ejemplo. Puedes borrar de aqui
-
         var a = document.createElement('a');
         a.href = element.url;
         a.textContent = element.title
         app.appendChild(a);
-
         // Hasta aqui
 
         collection.push(element);
