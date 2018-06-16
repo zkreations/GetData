@@ -5,14 +5,14 @@
 */
 var apiKey = "apiKey", // Leer: zkreations.com/get-apikey
     blogId = "blogId",
-    fields = "nextPageToken,items(published,url,title)",
-    app = document.getElementById("app"),
+    fields = "items(url,title)", // Leer: developers.google.com/blogger/docs/3.0/performance#partial-response
+    app = document.getElementById("app"),  // Modificar o borrar
     nextPageToken,
     collection = [];
 
 function getData() {
     var script = document.createElement('script'),
-        jsonUrl = "https://www.googleapis.com/blogger/v3/blogs/" + blogId + "/posts" + "?key=" + apiKey + "&maxResults=500&fields=" + fields + "&callback=manageData";
+        jsonUrl = "https://www.googleapis.com/blogger/v3/blogs/" + blogId + "/posts" + "?key=" + apiKey + "&maxResults=500&fields=nextPageToken," + fields + "&callback=manageData";
     if (nextPageToken) {
         jsonUrl += "&pageToken=" + nextPageToken;
         nextPageToken = undefined;
@@ -25,7 +25,7 @@ function getData() {
 function manageData(json) {
     json.items.forEach(function(element, index) {
 
-        // Codigo de ejemplo. Puedes borrar de aqui
+        // Codigo con un ejemplo. Puedes borrar de aqui
         var a = document.createElement('a');
         a.href = element.url;
         a.textContent = element.title
