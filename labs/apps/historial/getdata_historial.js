@@ -1,9 +1,10 @@
 /*!
-=> GetData Historial v1.0.1
+=> GetData Historial v1.0.2
 => Copyright 2018 Kenny Cruz | github.com/jokenox (zkreations team)
 => Licensed under MIT | github.com/zkreations/GetData/blob/master/LICENSE
 */
 var _app = document.getElementById("wjs-history"),
+    _load = document.querySelector(".wjs-history__loading"),
     _blogId = _app.dataset.blogid,
     _apiKey = _app.dataset.apikey,
     _months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
@@ -57,6 +58,6 @@ function manageData(json){
   if(_nextPageToken){
     getData();
   }
+  _load.parentNode.removeChild(_load);
 }
-
 getData();

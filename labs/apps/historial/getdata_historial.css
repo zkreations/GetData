@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-=> GetData Historial v1.0.1
+=> GetData Historial v1.0.2
 => Copyright 2018 Daniel Abel | fb.com/danieI.abel (zkreations)
 => Licensed under MIT | github.com/zkreations/GetData/blob/master/LICENSE
 */
@@ -64,6 +64,15 @@
 .list-element__date svg {
     margin-right: .5em;
 }
+/*Loading*/
+@keyframes loading {
+    from {transform: rotate(0)}
+    to {transform: rotate(360deg)}
+}
+svg.wjs-history__loading--animation {
+    animation: loading infinite linear .5s;
+    fill: rgba(0, 0, 0, 0.75);
+}
 
 /*
 => Personalizar
@@ -111,6 +120,7 @@
 .list-element__title {
     color: rgba(0, 0, 0, 0.75); /*color*/
     font-size: 1.1em; /*tamaño de fuente*/
+    font-weight: 500; /*grosor del texto*/
 }
 
 /* Fecha del post
