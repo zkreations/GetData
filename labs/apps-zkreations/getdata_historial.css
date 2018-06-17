@@ -1,0 +1,126 @@
+@charset "UTF-8";
+/*!
+=> GetData Historial v1.0.1
+=> Copyright 2018 Daniel Abel | fb.com/danieI.abel (zkreations)
+=> Licensed under MIT | github.com/zkreations/GetData/blob/master/LICENSE
+*/
+
+/* Reset */
+.wjs-history__title,
+.wjs-history__title-url,
+.wjs-history__list,
+.wjs-history__list-element {
+    background: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style-type: none;
+    box-shadow: 0 0 transparent;
+    font: inherit;
+    text-decoration: none;
+}
+.wjs-history__list-element,
+.list-element__count,
+.list-element__date {
+    display: flex;
+}
+.list-element__date,
+.list-element__count {
+    align-items: center;
+}
+/* Historial */
+.wjs-history__title::before {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 50%;
+    width: 100%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.wjs-history__title-url {
+    display: inline-block;
+    padding-right: 1em;
+    position: relative;
+    z-index: 1;
+}
+.wjs-history__title {
+    position: relative;
+    margin-bottom: .5em;
+}
+.list-element__count {
+    padding: 0 1em; 
+}
+.wjs-history__list {
+    margin-bottom: 1em;
+}
+.list-element__title {
+    display: block;
+}
+.wjs-history__title-url,
+.list-element__title {
+    transition: color .3s;
+}
+.list-element__date svg {
+    margin-right: .5em;
+}
+
+/*
+=> Personalizar
+*/
+/* Cuerpo
+--------------------------------------------*/
+.wjs-history {
+    font-size: 14px; /*tamaño de fuentes*/
+}
+
+/* Titulo (mes y año)
+--------------------------------------------*/
+.wjs-history__title-url {
+    background-color: #ffffff; /*color de fondo*/
+    color: rgba(0, 0, 0, 0.5); /*color*/
+    font-weight: 700; /*grosor del texto*/
+    font-size: 1.1em; /*tamaño de fuente*/
+}
+.wjs-history__title::before {
+    border-top: 4px double #D9D9D9; /*decoracion del titulo*/
+}
+/* Lista
+--------------------------------------------*/
+.wjs-history__list {
+    margin-bottom: 1.5em; /*Separacion entra listas*/
+    background-color:rgba(222, 221, 218, 0.2); /*color de fondo*/
+}
+.wjs-history__list-element:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.05); /*color de fondo cada 1 elemento*/
+}
+
+/* Elementos de la lista
+--------------------------------------------*/
+.list-element__count {
+    font-weight: 700; /*grosor del texto (dia)*/
+    background: rgba(0, 0, 0, 0.1); /*color de fondo (dia)*/
+    font-size: 1.1em; /*tamaño de fuente (dia)*/
+}
+.list-element__data {
+    padding: 1em; /*relleno (datos)*/
+}
+
+/* Titulo del post
+--------------------------------------------*/
+.list-element__title {
+    color: rgba(0, 0, 0, 0.75); /*color*/
+    font-size: 1.1em; /*tamaño de fuente*/
+}
+
+/* Fecha del post
+--------------------------------------------*/
+.list-element__date svg {
+    width: 16px; /*tamaño del icono*/
+    fill: rgba(0, 0, 0, 0.4); /*color*/
+}
+.list-element__date {
+    color: rgba(0, 0, 0, 0.4); /*color*/
+    font-weight: 700; /*grosor del texto*/
+    font-size: 12px; /*tamaño de fuente*/
+}
