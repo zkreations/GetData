@@ -69,7 +69,7 @@
     from {transform: rotate(0)}
     to {transform: rotate(360deg)}
 }
-svg.wjs-history__loading--animation {
+svg.wjs-history__loading {
     animation: loading infinite linear .5s;
     fill: rgba(0, 0, 0, 0.75);
 }
